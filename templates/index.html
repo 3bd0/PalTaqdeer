@@ -1,0 +1,495 @@
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0;">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title> PalTaqdeer </title>
+        <link rel="stylesheet" href="/static/assets/css/bootstrap.css" />
+        <link href="/static/assets/css/style.css" rel="stylesheet" />
+        <style>
+      .trigge, .trigg2{
+      text-align: center;
+    padding: 7px 13px;
+    background: #3e3e3e;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.moda, .modx {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    z-index: 100;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+    table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+
+        thead tr{
+          background-color: #888;
+        }
+
+        .table{
+            --bs-table-hover-bg: rgba(0, 0, 0, 0.25);
+        }
+
+
+    </style>
+
+    </head>
+
+    <body>
+        <div class="login-root">
+            <div class="box-root flex-flex flex-direction--column"
+                style="min-height: 100vh;flex-grow: 1;">
+                <div
+                    class="loginbackground box-background--white padding-top--64">
+                    <div class="loginbackground-gridContainer">
+                        <div class="box-root flex-flex"
+                            style="grid-area: top / start / 8 / end;">
+                            <div class="box-root"
+                                style="background-image: linear-gradient(white 0%, rgb(247, 250, 252) 33%); flex-grow: 1;">
+                            </div>
+                        </div>
+                        <div class="box-root flex-flex"
+                            style="grid-area: 4 / 2 / auto / 5;">
+                            <div
+                                class="box-root box-divider--light-all-2 animationLeftRight tans3s"
+                                style="flex-grow: 1;">
+                            </div>
+                        </div>
+                        <div class="box-root flex-flex"
+                            style="grid-area: 6 / start / auto / 2;">
+                            <div class="box-root box-background--blue800"
+                                style="flex-grow: 1;"></div>
+                        </div>
+                        <div class="box-root flex-flex"
+                            style="grid-area: 7 / start / auto / 4;">
+                            <div
+                                class="box-root box-background--blue animationLeftRight"
+                                style="flex-grow: 1;"></div>
+                        </div>
+                        <div class="box-root flex-flex"
+                            style="grid-area: 8 / 4 / auto / 6;">
+                            <div
+                                class="box-root box-background--gray100 animationLeftRight tans3s"
+                                style="flex-grow: 1;">
+                            </div>
+                        </div>
+                        <div class="box-root flex-flex"
+                            style="grid-area: 2 / 15 / auto / end;">
+                            <div
+                                class="box-root box-background--cyan200 animationRightLeft tans4s"
+                                style="flex-grow: 1;">
+                            </div>
+                        </div>
+                        <div class="box-root flex-flex"
+                            style="grid-area: 3 / 14 / auto / end;">
+                            <div
+                                class="box-root box-background--blue animationRightLeft"
+                                style="flex-grow: 1;"></div>
+                        </div>
+                        <div class="box-root flex-flex"
+                            style="grid-area: 4 / 17 / auto / 20;">
+                            <div
+                                class="box-root box-background--gray100 animationRightLeft tans4s"
+                                style="flex-grow: 1;">
+                            </div>
+                        </div>
+                        <div class="box-root flex-flex"
+                            style="grid-area: 5 / 14 / auto / 17;">
+                            <div
+                                class="box-root box-divider--light-all-2 animationRightLeft tans3s"
+                                style="flex-grow: 1;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="box-root padding-top--24 flex-flex flex-direction--column"
+                    style="flex-grow: 1; z-index: 9;">
+                    <div
+                        class="box-root padding-bottom--24 flex-flex flex-justifyContent--center">
+                        <div style="max-width: 400px; overflow: hidden;">
+                            <img src="/static/assets/img/final.png" style="width: 100%;">
+                        </div>
+                    </div>
+                    <div class="formbg-outer">
+                        <div class="formbg mb-5">
+                            <div
+                                class="formbg-inner py-3 mb-5">
+                                <span class="my-4 container"
+                                    style="text-align: center;">Fill The Student
+                                    Information</span>
+                                <form id="stripe-login" class="container">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="field my-4">
+                                                <label for="number">Age</label>
+                                                <input type="number" id="age"
+                                                    name="age"
+                                                    placeholder="15 - 22"
+                                                    min="15"
+                                                    max="22"
+                                                    required>
+                                            </div>
+                                            <div class="field my-4">
+                                                <label for="number">No. Of
+                                                    Failure Times</label>
+                                                <input type="number" min="0"
+                                                    max="4"
+                                                    step="1"
+                                                    placeholder="0 - 4"
+                                                    name="failures"
+                                                    id="failures" required>
+                                            </div>
+                                            <div class="field my-4">
+                                                <label for="number">First Period
+                                                    Grade</label>
+                                                <input type="number" min="0"
+                                                    max="20"
+                                                    step="1"
+                                                    name="g1" id="g1"
+                                                    placeholder="0 - 20">
+                                            </div>
+                                            <div class="field my-4">
+                                                <label for="number">Second
+                                                    Period Grade</label>
+                                                <input type="number" min="0"
+                                                    max="20"
+                                                    step="1"
+                                                    name="g2" id="g2"
+                                                    placeholder="0 - 20">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="field my-4">
+                                                <label for="medu">Mother Education :</label>
+                                                <select name="medu" id="medu"
+                                                    class="dis"
+                                                    style="width: 100%; height: 37; border-radius: 4px; outline-color: #17db21;"
+                                                    required
+                                                    onchange="this.className=this.options[this.selectedIndex].className">
+                                                    <option value disabled
+                                                        selected>Choose</option>
+                                                    <option class value="0">No
+                                                        Education</option>
+                                                    <option class value="1">Primary
+                                                        Education</option>
+                                                    <option class value="2">5th
+                                                        to 9th
+                                                        grade</option>
+                                                    <option class value="3">Secandary
+                                                        Education</option>
+                                                    <option class value="4">Higher
+                                                        Education</option>
+                                                </select>
+                                            </div>
+                                            <div class="list my-4">
+                                                <label for="cars">Father
+                                                    Education:</label>
+                                                <select name="fedu" id="fedu"
+                                                    class="dis"
+                                                    style="width: 100%; height: 37; border-radius: 4px; outline-color: #17db21;"
+                                                    required
+                                                    onchange="this.className=this.options[this.selectedIndex].className">
+                                                    <option value disabled
+                                                        selected>Choose</option>
+                                                    <option class value="0">No
+                                                        Education</option>
+                                                    <option class value="1">Primary
+                                                        Education</option>
+                                                    <option class value="2">5th
+                                                        to 9th
+                                                        grade</option>
+                                                    <option class value="3">Secandary
+                                                        Education</option>
+                                                    <option class value="4">Higher
+                                                        Education</option>
+                                                </select>
+                                            </div>
+                                            <div class="field my-4">
+                                                <label for="gouout">Hang Out
+                                                    Status ?</label>
+                                                <select name="gouout"
+                                                    id="gouout"
+                                                    class="dis"
+                                                    style="width: 100%; height: 37; border-radius: 4px; outline-color: #17db21;"
+                                                    required
+                                                    onchange="this.className=this.options[this.selectedIndex].className">
+                                                    <option value disabled
+                                                        selected>Choose</option>
+                                                    <option class value="1">Very
+                                                        Rarely</option>
+                                                    <option class value="2">Rarely</option>
+                                                    <option class value="3">Sometimes</option>
+                                                    <option class value="4">Often</option>
+                                                    <option class value="5">Always</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="my-4 col-md-6">
+                                            <label>Intent to Higher Education?</label>
+                                            <div class="row">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        Yes
+                                                        <input class="form-check-input" type="radio" name="higher" id="higher" value="1" required>
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        No
+                                                        <input class="form-check-input" type="radio" name="higher" id="higher" value="0" required>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="my-4 col-md-6">
+                                            <label>Is In Realationship?</label>
+                                            <div class="row">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        Yes
+                                                        <input class="form-check-input" type="radio" name="romantic" id="romantic" value="1" required>
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        No
+                                                        <input class="form-check-input" type="radio" name="romantic" id="romantic" value="0" required>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row my-4">
+                                        <button type="submit" name="submit"
+                                            class="btn btn-default trigge col-5">Predict
+                                            The Grade</button>
+                                        <div class="col-2"></div>
+                                        <button type="button" class="trigg2 col-5">Show Last
+                                            Results</button>
+                                    </div>
+                                </form>
+                                <div class="moda">
+                                    <div class="modal-content">
+                                        <h1 id="rslt"></h1>
+                                        <div id="errorAlert"
+                                            class="alert alert-danger"
+                                            role="alert" style="display:none;"></div>
+                                        <video loading="lazy" id="fail"
+                                            muted="muted"
+                                            src="/static/assets/img/boy-learning-maths-9565968-7813551.mp4"
+                                            type="video/mp4" autoplay="autoplay"
+                                            loop="loop" style="display: none;"></video>
+                                        <video loading="lazy" id="scss"
+                                            muted="muted"
+                                            src="/static/assets/img/math-lesson-9565967-7813550.mp4"
+                                            type="video/mp4" autoplay="autoplay"
+                                            loop="loop" style="display: none;"></video>
+                                        <h1 id="score"></h1>
+                                    </div>
+                                </div>
+                                <div class="modx">
+                                    <div class="modal-content"
+                                        style="width: 90%; max-height: 90%; overflow-y: auto; border-radius: 5px;">
+                                        <h1 class="text-center">Last Results</h1>
+                                        <div class="x" style="width: 100%; overflow-x: auto;">
+                                            <table class="table table-hover table-responsive" style="border-radius: 5px;">
+                                                <thead style="position: sticky; top: -2px;">
+                                                    <tr>
+                                                        <th scope="col">ID</th>
+                                                        <th scope="col">Mother Education</th>
+                                                        <th scope="col">Father Education</th>
+                                                        <th scope="col">Hang Out</th>
+                                                        <th scope="col">Intent to H. Education</th>
+                                                        <th scope="col">Realationship</th>
+                                                        <th scope="col">Age</th>
+                                                        <th scope="col">Past Failures</th>
+                                                        <th scope="col">G1 (20)</th>
+                                                        <th scope="col">G2 (20)</th>
+                                                        <th scope="col">G3 (20)</th>
+                                                    </tr>
+                                                </thead>
+                                                {% for a , b , c , d , e , f , h , i
+                                                , j, k in data %}
+                                                <tbody>
+                                                    <tr>
+                                                        {%- if loop.index % 2 == 0
+                                                        %}
+                                                        {%- set even = "background-color: #0000000d;" -%}
+                                                        {%- else %}
+                                                        {%- set even = "background-color: transparent;" -%}
+                                                        {% endif %}
+                                                        
+                                                        {%- if b == 0 -%}
+                                                        {%- set b = "No Education"
+                                                        -%}
+                                                        {%- elif b == 1 -%}
+                                                        {%- set b =
+                                                        "Primary Education" -%}
+                                                        {%- elif b == 2 -%}
+                                                        {%- set b =
+                                                        "5th to 9th grade" -%}
+                                                        {%- elif b == 3 -%}
+                                                        {%- set b =
+                                                        "Sec. Education" -%}
+                                                        {%- elif b == 4 -%}
+                                                        {%- set b =
+                                                        "Higher Education" -%}
+                                                        {% endif %}
+    
+                                                        {%- if c == 0 -%}
+                                                        {%- set c = "No Education"
+                                                        -%}
+                                                        {%- elif c == 1 -%}
+                                                        {%- set c =
+                                                        "Primary Education" -%}
+                                                        {%- elif c == 2 -%}
+                                                        {%- set c =
+                                                        "5th to 9th grade" -%}
+                                                        {%- elif c == 3 -%}
+                                                        {%- set c =
+                                                        "Sec. Education" -%}
+                                                        {%- elif c == 4 -%}
+                                                        {%- set c =
+                                                        "Higher Education" -%}
+                                                        {% endif %}
+    
+                                                        {%- if e == 0 -%}
+                                                        {%- set e = "No" -%}
+                                                        {%- elif e == 1 -%}
+                                                        {%- set e = "Yes" -%}
+                                                        {% endif %}
+    
+                                                        {%- if f == 0 -%}
+                                                        {%- set f = "No" -%}
+                                                        {%- elif f == 1 -%}
+                                                        {%- set f = "Yes" -%}
+                                                        {% endif %}
+    
+                                                        {%- if j == 1 -%}
+                                                        {%- set j = "V. Rarely" -%}
+                                                        {%- elif j == 2 -%}
+                                                        {%- set j = "Rarely" -%}
+                                                        {%- elif j == 3 -%}
+                                                        {%- set j = "Sometimes" -%}
+                                                        {%- elif j == 4 -%}
+                                                        {%- set j = "Often" -%}
+                                                        {%- elif j == 5 -%}
+                                                        {%- set j = "Always" -%}
+                                                        {% endif %}
+                                                        
+                                                        {%- if k > 20 -%}
+                                                        {%- set k = 20 -%}
+                                                        {%- elif k < 0 -%}
+                                                        {%- set k = 0 -%}
+                                                        {% endif %}
+    
+                                                        <td scope="row" style="{{ even }}">{{ loop.index }}</td>
+                                                        <td style="{{ even }}">{{b}}</td>
+                                                        <td style="{{ even }}">{{c}}</td>
+                                                        <td style="{{ even }}">{{j}}</td>
+                                                        <td style="{{ even }}">{{e}}</td>
+                                                        <td style="{{ even }}">{{f}}</td>
+                                                        <td style="{{ even }}">{{a}}</td>
+                                                        <td style="{{ even }}">{{d}}</td>
+                                                        <td style="{{ even }}">{{h}}</td>
+                                                        <td style="{{ even }}">{{i}}</td>
+                                                        <td style="{{ even }}">{{k}}</td>
+                                                    </tr>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- {% if predicted %} -->
+                            <!-- <div class="field padding-bottom--24 modal-dialog modal-dialog-centered"
+                            style="text-align: center; font-weight: 600;">
+                            <p class="text-center" id="grade"> the grade is {{ grade }}</p>
+                            </div> -->
+                        </div>
+                        <!-- {% endif %} -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/static/assets/js/jquery-3.7.1.min.js"></script>
+        <script src="/static/assets/js/jquery.validate.min.js"></script>
+        <script src="/static/assets/js/bootstrap.js"></script>
+        <script src="/static/assets/js/ajax.js"></script>
+        <script>
+            var modal = document.querySelector(".moda");
+            var moda2 = document.querySelector(".modx");
+            var trigger = document.querySelector(".trigge");
+            var trigge2 = document.querySelector(".trigg2");
+
+            function toggleModal() {
+                modal.classList.toggle("show-modal");
+            }
+            function toggleModal2() {
+                moda2.classList.toggle("show-modal");
+            }
+
+            function windowOnClick(event) {
+                if (event.target === modal) {
+                    toggleModal();
+                }
+            }
+            function windowOnClick2(event) {
+                if (event.target === moda2) {
+                    toggleModal2();
+                }
+            }
+
+            trigger.addEventListener("click", toggleModal);
+            trigge2.addEventListener("click", toggleModal2);
+            window.addEventListener("click", windowOnClick2);
+
+        </script>
+
+    </body>
+
+</html>
